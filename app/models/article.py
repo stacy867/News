@@ -4,12 +4,13 @@ class Article:
     news'article to define articles objects
     '''
     
-    def __init__(self,author,tittle,imageurl,description,time):
+    def __init__(self,author,tittle,imageurl,description,time,url):
         self.author = author
         self.tittle = tittle
         self.imageurl = imageurl
         self. description = description
         self.time = time 
+        self.url = url
         
     # def save_articles(self):
     #     Article.articles.append(self)
