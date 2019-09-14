@@ -19,17 +19,19 @@ def get_source(category):
     function that gets the json response to our url request
     '''
     get_source_url = source_url.format(category,api_key)
+    print(get_source_url)
 
     with urllib.request.urlopen(get_source_url) as url:
         get_source_data = url.read()
         get_source_response = json.loads(get_source_data)
+        
 
         source_result = None
 
         if get_source_response['sources']:
             source_result_list = get_source_response['sources']
             source_result = process_sourceresults(source_result_list)
-
+    
     return source_result
 
 def process_sourceresults(source_list):
@@ -45,9 +47,9 @@ def process_sourceresults(source_list):
     source_results = []
     for source_item in source_list:
         id = source_item.get('id')
-        name = source_item.get('original_name')
+        name = source_item.get('name')
         country = source_item.get('country')
-        sourceurl = source_item.get('source_path')
+        sourceurl = source_item.get('url')
         
 
         if sourceurl:
@@ -57,11 +59,11 @@ def process_sourceresults(source_list):
     return source_results
 
 
-def get_article(category):
+def get_article(id):
     '''
     function that gets the json response to our url request
     '''
-    get_article_url = article_url.format(category,api_key)
+    get_article_url = article_url.format(id,api_key)
 
     with urllib.request.urlopen(get_article_url) as url:
         get_article_data = url.read()
@@ -69,8 +71,8 @@ def get_article(category):
 
         article_result = None
 
-        if get_article_response['results']:
-            article_result_list = get_article_response['results']
+        if get_article_response['articles']:
+            article_result_list = get_article_response['articles']
             article_result = process_articleresults(article_result_list)
 
     return article_result
@@ -89,10 +91,12 @@ def process_articleresults(article_list):
     article_results = []
     for article_item in article_list:
         author = article_item.get('author')
-        tittle = article_item.get('title name')
-        imageurl = article_item.get('image path')
+        tittle = article_item.get('title ')
+        imageurl = article_item.get('urlToImage')
         description = article_item.get('description')
-        time = article_item.get('time')
+        time = article_item.get('publishedAt')
+        url = article_item.get('url')
+        
         
 
         if imageurl:
