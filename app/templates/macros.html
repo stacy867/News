@@ -3,7 +3,7 @@
     {% for source in source_list %}
         <li>{{ source.name}}</li>
         <li>{{ source.sourceurl}}</li>
-        <a href="/everything/source.id"> <button >click to view articles</button></a>
+        <a href="/everything/{{source.id}}"> <button >click to view articles</button></a>
        
     {% endfor %}
 {% endmacro %}    
@@ -14,9 +14,10 @@
         <li>{{ art.author}}</li>
         <li>{{ art.tittle}}</li>
         <li><img src='{{ art.imageurl }}'></li>
+        <li>{{art.description}}</li>
         <li>{{ art.time}}</li>
 
-        <button href="{{art.url}}">click to view more details</button>
+       <a href="{{art.url}}"><button >click to view more details</button></a> 
     {% endfor %}    
 
 {% endmacro %}
