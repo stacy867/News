@@ -3,6 +3,20 @@
     {% for source in source_list %}
         <li>{{ source.name}}</li>
         <li>{{ source.sourceurl}}</li>
+        <a href="/everything/source.id"> <button >click to view articles</button></a>
+       
     {% endfor %}
+{% endmacro %}    
+
+{% macro displayArticleList(article_list) %}
+
+    {% for art in article_list %}
+        <li>{{ art.author}}</li>
+        <li>{{ art.tittle}}</li>
+        <li><img src='{{ art.imageurl }}'></li>
+        <li>{{ art.time}}</li>
+
+        <button href="{{art.url}}">click to view more details</button>
+    {% endfor %}    
 
 {% endmacro %}
