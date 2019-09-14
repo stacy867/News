@@ -59,11 +59,12 @@ def process_sourceresults(source_list):
     return source_results
 
 
-def get_article(id):
+def get_article(sources):
     '''
     function that gets the json response to our url request
     '''
-    get_article_url = article_url.format(id,api_key)
+    get_article_url = article_url.format(sources,api_key)
+
 
     with urllib.request.urlopen(get_article_url) as url:
         get_article_data = url.read()
@@ -100,7 +101,8 @@ def process_articleresults(article_list):
         
 
         if imageurl:
-            article_object = Article(author,tittle,imageurl,description,time)
+            article_object = Article(author,tittle,imageurl,description,time,url)
             article_results.append(article_object)
+            print(article_results)
 
     return article_results
