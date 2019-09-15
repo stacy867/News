@@ -1,5 +1,6 @@
-{% import 'macros.html' as macro%}
-<!DOCTYPE html>
+{% import 'macros.html' as macro
+{% extends 'base.html'%}
+<!-- <!DOCTYPE html>
 <html>
     <head>
         <meta charset="utf-8">
@@ -8,14 +9,12 @@
         {% else %}
         <title> Welcome to articles </title>
         {% endif %}
-    </head>
-    <body>
-    
-        <h2>ARTICLES</h2>
-        <ul>
+    </head> -->
+    {% block content %}
+    <h2>ARTICLES</h2>
+    <ul>
             
-             {{ macro.displayArticleList(articles) }}
-        </ul>
-
-    </body>
-</html>
+        {{ macro.displayArticleList(articles) }}
+   </ul>
+   {% endblock%}  
+    
