@@ -2,9 +2,10 @@ class Config:
     '''
     General configuration parent class
     '''
-    NEWS_ARTICLE_BASE_URL ='https://newsapi.org/v2/everything?q=category&apiKey=97cfaba871ef419ba1910bc69a749632'
-    NEWS_SOURCE_BASE_URL ='https://newsapi.org/v2/sources?apiKey=97cfaba871ef419ba1910bc69a749632'
-    # NEWS_API_KEY=
+    NEWS_ARTICLE_BASE_URL ='https://newsapi.org/v2/everything?q={}&apiKey={}'
+    # NEWS_ARTICLE_BASE_URL ='https://newsapi.org/v2/everything?sources={}&apiKey={}'
+    NEWS_SOURCE_BASE_URL ='https://newsapi.org/v2/sources?category={}&apiKey={}'
+    
     # pass
 
 
