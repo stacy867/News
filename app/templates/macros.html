@@ -4,7 +4,7 @@
         <h3><strong>{{ source.name}}</strong></h3>
         <p>{{source.description}}</p>
         <a href="{{ source.sourceurl}}"><button type="button" class="btn btn-light">{{source.name}} website</button></a>
-        <a href="/everything/{{source.id}}"> <button type="button" class="btn btn-info">click to view articles</button></a>
+        <a href="/everything/{{source.id}}"> <button  type="button" class="btn btn-secondary">click to view articles</button></a>
        
     {% endfor %}
 {% endmacro %}  
@@ -15,11 +15,11 @@
        
     {% for art in article_list %}
     <div class="col-md-4">
-        <p>Author's name:{{ art.author}}</p>
-        <p>Article's title:{{ art.tittle}}</p>
+        <p><strong>Author's name:</strong>{{ art.author}}</p>
+        <p><strong>Article's title:</strong>{{ art.tittle}}</p>
         <p><img src='{{ art.imageurl }}' width=130 height=100></p>
         <p>{{art.description}}</p>
-        <p>publishedat:{{ art.time}}</p>
+        <p><strong>publishedAt:</strong>{{ art.time}}</p>
 
        <a href="{{art.url}}"><button type="button" class="btn btn-info">click to view more details</button></a> 
     </div>
