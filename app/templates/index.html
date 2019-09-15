@@ -1,15 +1,17 @@
-{% extends 'base.html'%}
+{% extends 'bootstrap/base.html'%}
 {% import 'macros.html' as macro%}
 
 {% block content %}
+
+<div class="container">
+        <h1>NEWS HIGHLIGHTS</h1>
 <!--SOURCES-->
-<h2>Sources</h2>
-<ul>
-    <!-- {% for source in news %}
-    <li>{{ source.name}}</li>
-    <li>{{ source.sourceurl}}</li>
-     {% endfor %} -->
-     {{ macro.displaySourceList(news) }}
-</ul>
+       <h2>Sources</h2>
+       <ul>
+   
+          {{ macro.displaySourceList(news) }}
+        </ul>
+</div>
+{% endblock%}
 
   
