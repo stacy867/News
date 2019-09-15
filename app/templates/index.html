@@ -1,24 +1,15 @@
+{% extends 'base.html'%}
 {% import 'macros.html' as macro%}
-<!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        {% if title %}
-        <title> {{ title }}</title>
-        {% else %}
-        <title> Welcome to the best Movie Review website </title>
-        {% endif %}
-    </head>
-    <body>
-        <!--SOURCES-->
-        <h2>Sources</h2>
-        <ul>
-            <!-- {% for source in news %}
-            <li>{{ source.name}}</li>
-            <li>{{ source.sourceurl}}</li>
-             {% endfor %} -->
-             {{ macro.displaySourceList(news) }}
-        </ul>
 
-    </body>
-</html>
+{% block content %}
+<!--SOURCES-->
+<h2>Sources</h2>
+<ul>
+    <!-- {% for source in news %}
+    <li>{{ source.name}}</li>
+    <li>{{ source.sourceurl}}</li>
+     {% endfor %} -->
+     {{ macro.displaySourceList(news) }}
+</ul>
+
+  
