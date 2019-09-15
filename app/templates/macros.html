@@ -1,8 +1,9 @@
 {% macro displaySourceList(source_list) %}
 
     {% for source in source_list %}
-        <li>{{ source.name}}</li>
-        <li>{{ source.sourceurl}}</li>
+        <h3><strong>{{ source.name}}</strong></h3>
+        <p>{{source.description}}</p>
+        <a href="{{ source.sourceurl}}"><button>{{source.name}} website</button></a>
         <a href="/everything/{{source.id}}"> <button >click to view articles</button></a>
        
     {% endfor %}
