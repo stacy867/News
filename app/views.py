@@ -33,6 +33,7 @@ def source(source_id):
     View source page function that returns the articles  page
     '''
     news_articles = get_article('relevancy')
+    
     # print(news_articles)
     title = 'Home -welcome to articles'
     return render_template('articles.html',id = source_id, articles= news_articles)

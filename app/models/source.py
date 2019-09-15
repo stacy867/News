@@ -4,10 +4,10 @@ class Source:
     news'source to define news_source objects
     '''
     
-    def __init__(self,id,name,country,sourceurl):
+    def __init__(self,id,name,description,sourceurl):
         self.id = id
         self.name = name
-        self.country = country
+        self.description = description
         self.sourceurl = sourceurl
 
 

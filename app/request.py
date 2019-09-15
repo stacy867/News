@@ -48,22 +48,22 @@ def process_sourceresults(source_list):
     for source_item in source_list:
         id = source_item.get('id')
         name = source_item.get('name')
-        country = source_item.get('country')
+        description = source_item.get('description')
         sourceurl = source_item.get('url')
         
 
         if sourceurl:
-            source_object = Source(id,name,country,sourceurl)
+            source_object = Source(id,name,description,sourceurl)
             source_results.append(source_object)
 
     return source_results
 
 
-def get_article(sources):
+def get_article(q):
     '''
     function that gets the json response to our url request
     '''
-    get_article_url = article_url.format(sources,api_key)
+    get_article_url = article_url.format(q,api_key)
 
 
     with urllib.request.urlopen(get_article_url) as url:
