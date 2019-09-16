@@ -3,8 +3,7 @@ import urllib.request,json
 from .models import Source
 from .models import Article
 
-# Source = source.Source
-# Article = article.Article
+# Source = source.Sourc
 
 # Getting api key
 api_key = None
@@ -69,7 +68,7 @@ def get_article(q):
     function that gets the json response to our url request
     '''
     get_article_url = article_url.format(q,api_key)
-
+    print(get_article_url)
 
     with urllib.request.urlopen(get_article_url) as url:
         get_article_data = url.read()

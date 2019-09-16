@@ -5,8 +5,7 @@ bootstrap = Bootstrap()
 
 def create_app(config_name):
     app = Flask(__name__)
-# Initializing application
-#app = Flask(__name__,instance_relative_config = True)
+
 # Creating the app configurations
     app.config.from_object(config_options[config_name])
 
@@ -23,4 +22,3 @@ def create_app(config_name):
 
     return app
 
-# from app import views

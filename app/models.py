@@ -12,7 +12,7 @@ class Source:
         self.sourceurl = sourceurl
 
 
-## article
+## article class
 class Article:
     articles= []
     '''

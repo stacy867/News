@@ -21,13 +21,7 @@ def index():
     return render_template('index.html', title = title,news = news_sources,news1=news_sources1,news2=news_sources2)
 
 
-# @app.route('/sources/<int:sources_id>')
-# def source(source_id):
 
-#     '''
-#     View source page function that returns the sources  page
-#     '''
-#     return render_template('source.html',id = sources_id)
 
 
 @main.route('/everything/<source_id>')
@@ -36,8 +30,8 @@ def source(source_id):
     '''
     View source page function that returns the articles  page
     '''
-    news_articles = get_article('id')
+    news_articles = get_article(source_id)
     
-    # print(news_articles)
+
     title = 'article -welcome to articles'
     return render_template('articles.html',id = source_id,title = title,articles= news_articles)
